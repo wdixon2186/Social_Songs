@@ -1,9 +1,8 @@
 {% extends "social_songs/base.html" %} {% block content %}
 <br />
-<br />
-<a href="{% url 'director_delete' pk=director.pk %}">Delete</a>
-
-<a href="{%  url 'director_edit' pk=director.pk%}">edit</a>
+<a href="{%  url 'director_edit' pk=director.pk%}">Edit</a>
+<div class="right">
+<a href="{% url 'director_delete' pk=director.pk %}">Delete</a></div>
 
 <h2>Name: {{ director.name }}</h2>
 <h4>Nationality: {{ director.nationality }}</h4>
