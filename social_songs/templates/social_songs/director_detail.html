@@ -1,0 +1,14 @@
+{% extends "social_songs/base.html" %} {% block content %}
+<br />
+<br />
+<a href="{% url 'director_delete' pk=director.pk %}">Delete</a>
+
+<a href="{%  url 'director_edit' pk=director.pk%}">edit</a>
+
+<h2>Name: {{ director.name }}</h2>
+<h4>Nationality: {{ director.nationality }}</h4>
+<h4>Age: {{ director.age }}</h4>
+<h4>Films: {{director.films}}</h4>
+<img src={{ director.photo_url }} />
+
+{% endblock %}

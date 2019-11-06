@@ -1,0 +1,11 @@
+{% extends "social_songs/base.html" %} {% block content %}
+<h2>Directors <a href="directors/new">(+)</a></h2>
+<ul>
+  {% for director in directors %}
+  <li>
+    <a href="{% url 'director_detail' pk=director.pk %}">{{ director.name }}</a>
+  </li>
+  {% endfor %}
+</ul>
+
+{% endblock %}

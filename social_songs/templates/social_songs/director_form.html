@@ -1,0 +1,7 @@
+{% extends 'social_songs/base.html' %} {% block content %}
+<h1>New Director</h1>
+<form method="POST" class="director-form">
+  {% csrf_token %} {{ form.as_p }}
+  <button type="submit" class="save btn btn-default">Save</button>
+</form>
+{% endblock %}
