@@ -71,10 +71,10 @@ def video_list(request):
 
 def video_create(request):
     if request.method == 'POST':
-        form = VideoForm(request.POST)
+        form = VideoForm(request.POST, request.FILES)
         if form.is_valid():
             video = form.save()
-            return redirect('video_detail', pk=video.pk)
+            return redirect('video_detail', pk=video.pk)  
     else:
         form = VideoForm()
     return render(request, 'social_songs/video_form.html', {'form': form})
@@ -86,7 +86,7 @@ def video_delete(request, pk):
 def video_edit(request, pk):
     video = Video.objects.get(pk=pk)
     if request.method == 'POST':
-        form = VideoForm(request.POST, instance=video)
+        form = VideoForm(request.POST, request.FILES, instance=video)
         if form.is_valid():
             video = form.save()
             return redirect('video_detail', pk=video.pk)
