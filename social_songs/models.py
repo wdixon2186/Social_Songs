@@ -6,6 +6,7 @@ class Director(models.Model):
     photo_url = models.TextField()
     age = models.IntegerField()
     name = models.CharField(max_length=100)
+    thumb = models.ImageField(default="default.png", blank=True)
 
     def __str__(self):
         return self.name
