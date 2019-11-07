@@ -4,10 +4,10 @@
 <div class="right">
 <a href="{% url 'director_delete' pk=director.pk %}">Delete</a></div>
 
-<h2>Name: {{ director.name }}</h2>
-<h4>Nationality: {{ director.nationality }}</h4>
-<h4>Age: {{ director.age }}</h4>
-<h4>Films: {{director.films}}</h4>
+<h2 class="detail">Name: {{ director.name }}</h2>
+<h4 class="detail">Nationality: {{ director.nationality }}</h4>
+<h4 class="detail">Age: {{ director.age }}</h4>
+<h4 class="detail">Films: {{director.films}}</h4>
 <img src={{ director.photo_url }} />
 <img src="{{director.thumb.url}}" />
 

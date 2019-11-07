@@ -51,21 +51,22 @@ def showvideo(request):
 
     videofile= lastvideo.videofile
 
-
+    videos = Video.objects.all()
     form= VideoForm(request.POST or None, request.FILES or None)
     if form.is_valid():
         form.save()
 
     
     context= {'videofile': videofile,
-              'form': form
+              'form': form, "videos":videos
               }
     
       
     return render(request, 'social_songs/video_list.html', context)
 
 def video_list(request):
-    videos = video.objects.all()
+    videos = Video.objects.all()
+    print(videos)
     return render(request, 'social_songs/video_list.html', {'videos': videos})
 
 def video_create(request):
@@ -80,7 +81,7 @@ def video_create(request):
 
 def video_delete(request, pk):
     Video.objects.get(id=pk).delete()
-    return redirect('video_list')
+    return redirect('director_list')
 
 def video_edit(request, pk):
     video = Video.objects.get(pk=pk)

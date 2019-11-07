@@ -5,7 +5,8 @@
 <a href="{% url 'video_delete' pk=video.pk %}">Delete</a></div>
 
 <h2>Name: {{ video.name }}</h2>
-<h4>file: {{ video.videofile }}</h4>
-<img src="{{video.videofile.url}}" />
+<video width="320" height="240" controls>
+    <source src="{{video.videofile.url}}" type="video/mp4">
+
 
 {% endblock %}
