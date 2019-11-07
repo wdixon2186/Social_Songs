@@ -12,4 +12,14 @@ urlpatterns = [
     path('directors/<int:pk>/edit', views.director_edit, name="director_edit"),
 
     path('directors/<int:pk>/delete', views.director_delete, name="director_delete"),
+
+    path('video', views.showvideo, name='showvideo'),
+
+    path('videos/<int:pk>', views.video_detail, name="video_detail"),
+
+    path('videos/new', views.video_create, name='video_create'),
+
+    path('videos/<int:pk>/edit', views.video_edit, name="video_edit"),
+
+    path('videos/<int:pk>/delete', views.video_delete, name="video_delete"),
 ]

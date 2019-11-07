@@ -1,0 +1,11 @@
+{% extends "social_songs/base.html" %} {% block content %}
+<br />
+<a href="{%  url 'video_edit' pk=video.pk%}">Edit</a>
+<div class="right">
+<a href="{% url 'video_delete' pk=video.pk %}">Delete</a></div>
+
+<h2>Name: {{ video.name }}</h2>
+<h4>file: {{ video.videofile }}</h4>
+<img src="{{video.videofile.url}}" />
+
+{% endblock %}
